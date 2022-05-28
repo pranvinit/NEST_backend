@@ -1,0 +1,50 @@
+### Create a new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "harsh@gmail.com",
+    "password": "secret"
+}
+
+### Sign in a user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+# Cookie Session will not send any cookie headers if there are no changes to session object
+{
+    "email": "harsh@gmail.com",
+    "password": "secret"
+}
+
+### Sign out a user
+GET http://localhost:3000/auth/signout
+
+### Show current user
+GET http://localhost:3000/auth/showCurrentUser
+
+
+### Find a particular user
+GET http://localhost:3000/auth/1
+
+
+### Find all users
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+    "email": "pranav@gmail.com"
+}
+
+
+### Update a particular user
+PATCH http://localhost:3000/auth/30
+Content-Type: application/json
+
+{
+    "password": "secret"
+}
+
+
+### Remove a particular user
+DELETE http://localhost:3000/auth/2
