@@ -29,12 +29,8 @@ GET http://localhost:3000/auth/1
 
 
 ### Find all users
-POST http://localhost:3000/auth
-Content-Type: application/json
+GET http://localhost:3000/auth?email=akshad@gmail.com
 
-{
-    "email": "pranav@gmail.com"
-}
 
 
 ### Update a particular user
