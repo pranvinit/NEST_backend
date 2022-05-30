@@ -1,3 +1,4 @@
+import { Report } from '../../reports/entities/report.entity';
 import {
   Entity,
   Column,
@@ -5,6 +6,7 @@ import {
   AfterInsert,
   AfterUpdate,
   AfterRemove,
+  OneToMany,
 } from 'typeorm';
 
 // only exception to the [resource][action] TypeScript naming convention
@@ -19,6 +21,13 @@ export class User {
 
   @Column()
   password: string;
+
+  // does not cause a change to the database
+  @OneToMany(() => Report, (report) => report.user)
+  report: Report[];
+
+  @Column({ default: true })
+  admin: boolean;
 
   // We get a reference of the record instance with the 'this' keyword
   @AfterInsert()
